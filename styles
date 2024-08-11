@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Background color -->
+        <item name="android:background">@color/colorBackground</item>
+
+        <!-- Text color -->
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <!-- Example of a custom theme for an activity -->
+    <style name="CustomActivityTheme" parent="AppTheme">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+</resources>

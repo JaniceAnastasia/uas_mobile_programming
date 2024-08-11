@@ -1,0 +1,57 @@
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addHospitalBtn = document.getElementById('add-hospital-btn');
+    const removeHospitalBtn = document.getElementById('remove-hospital-btn');
+    const hospitalList = document.getElementById('hospital-list');
+
+    // Mengambil data dari API
+    async function fetchHospitals() {
+        try {
+            const response = await fetch('https://api.example.com/hospitals'); // Ganti dengan URL API yang valid
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching hospitals:', error);
+            return [];
+        }
+    }
+
+    // Render rumah sakit
+    function renderHospitals(hospitals) {
+        hospitalList.innerHTML = '';
+        hospitals.forEach(hospital => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${hospital.name} - ${hospital.address}`;
+            hospitalList.appendChild(listItem);
+        });
+    }
+
+    // Menambahkan rumah sakit
+    async function addHospital() {
+        const hospitals = await fetchHospitals();
+        const newHospital = {
+            name: `RS UMUM DAERAH ${hospitals.length + 1}`,
+            address: `Jl. Contoh ${hospitals.length + 1}`,
+            region: `Region ${hospitals.length + 1}`,
+            phone: `(021) ${Math.floor(Math.random() * 1000000)}`
+        };
+        hospitals.push(newHospital);
+        renderHospitals(hospitals);
+    }
+
+    // Menghapus rumah sakit terakhir
+    async function removeHospital() {
+        const hospitals = await fetchHospitals();
+        if (hospitals.length > 0) {
+            hospitals.pop();
+            renderHospitals(hospitals);
+        }
+    }
+
+    addHospitalBtn.addEventListener('click', addHospital);
+    removeHospitalBtn.addEventListener('click', removeHospital);
+
+    // Inisialisasi tampilan rumah sakit
+    fetchHospitals().then(renderHospitals);
+});

@@ -1,0 +1,73 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#add-hospital-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#remove-hospital-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+#add-hospital-btn:hover {
+    background-color: #45a049;
+}
+
+#remove-hospital-btn:hover {
+    background-color: #e53935;
+}
+
+#hospital-list {
+    list-style: none;
+    padding: 0;
+}
+
+#hospital-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    margin: 5px 0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#hospital-list li:hover {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,12 @@
+<resources>
+    <!-- Primary Color -->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color> 
+    <color name="colorAccent">#4CAF50</color> 
+
+    <!-- Background Color -->
+    <color name="colorBackground">#FFFFFF</color>
+
+    <!-- Text and Secondary Elements -->
+    <color name="colorTextSecondary">#757575</color>
+</resources>
